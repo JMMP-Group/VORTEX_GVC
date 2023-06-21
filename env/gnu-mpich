@@ -1,0 +1,8 @@
+module purge
+source /opt/cray/pe/cpe/22.12/restore_lmod_system_defaults.sh
+module load PrgEnv-gnu
+module load cpe
+module load craype-network-ucx
+module load cray-mpich-ucx
+module load cray-hdf5-parallel
+module load cray-netcdf-hdf5parallel
