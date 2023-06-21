@@ -2,10 +2,10 @@
 Work to develop and test methods for changing the type of GVC in AGRIF nests
 
 ## Setting up the conda env
-'''
+```
 conda env create -f pyogcm.yml
 conda activate pyogcm
-'''
+```
 
 ## How to use it
 
