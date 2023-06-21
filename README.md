@@ -23,10 +23,14 @@ source ${nemodir}/ukmo_utils/use_intel_hpc.sh
 ```
 git clone git@github.com:JMMP_Group/VORTEX_GVC.git
 git clone  https://forge.nemo-ocean.eu/nemo/nemo.git nemo
-git checkout aafd62a791c3377cf4395ca940a057d74223f1a0
+svn co http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk@2479 xios
+cd xios
+cp ../VORTEX_GVC/arch/xios/arch-archer2-gnu-mpich.* arch/
 cd nemo
+git checkout aafd62a791c3377cf4395ca940a057d74223f1a0
 cp -r ../VORTEX_GVC/VORTEX_GVC ./cfgs/
 cp -r ../VORTEX_GVC/ref_cfgs.txt ./cfgs/
-. ../VORTEX_GVC/arch/gnu-mpich
-./makenemo -r VORTEX_GVC -m gnu-mpich
+. ../VORTEX_GVC/env/gnu-mpich
+cp ../VORTEX_GVC/arch/nemo/arch-archer2-gnu-mpich.fcm arch/
+./makenemo -r VORTEX_GVC -m archer2-gnu-mpich -j 14
 ```
